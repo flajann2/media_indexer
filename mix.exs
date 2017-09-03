@@ -4,9 +4,12 @@ defmodule MediaIndexer.Mixfile do
   def project do
     [
       app: :media_indexer,
-      version: "0.1.0",
+      version: "0.0.1",
       elixir: "~> 1.5",
       start_permanent: Mix.env == :prod,
+      escript: [main_module: MediaIndexer,
+                name: "mediax",
+                path: "./bin/mediax"],
       deps: deps()
     ]
   end

@@ -20,3 +20,8 @@ Documentation can be generated with
 [[https://github.com/elixir-lang/ex_doc][ExDoc]] and published on
 [[https://hexdocs.pm][HexDocs]]. Once published, the docs can be found
 at [[https://hexdocs.pm/media_indexer]].
+** Notes
+*** Building the project
+    #+begin_src bash
+    mix escript.build
+    #+end_src
