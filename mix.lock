@@ -1,0 +1,3 @@
+%{"apex": {:hex, :apex, "1.0.0", "abf230314d35ca4c48a902f693247f190ad42fc14862b9c4f7dbb7077b21c20a", [], [], "hexpm"},
+  "optimus": {:hex, :optimus, "0.1.4", "ffa252ec12968a0b1a2f314cb58faa2924f28216d23dae68d00ef937998df947", [], [{:yamerl, "~> 0.4.0", [hex: :yamerl, repo: "hexpm", optional: false]}], "hexpm"},
+  "yamerl": {:hex, :yamerl, "0.4.0", "ae215b1242810a9bc07716b88062f1bfe06f6bc7cf68372091f630baa536df79", [], [], "hexpm"}}
