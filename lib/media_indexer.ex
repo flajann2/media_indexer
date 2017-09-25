@@ -14,10 +14,26 @@ defmodule MediaIndexer do
     puts "No arguments given"
   end
 
-  def process(options) do
-    ap options
-  end
+  def process({[:scan], a}) do
+    puts "Superb matching of scan"
+    ap a
+  end 
 
+  def process({[:search], a}) do
+    puts "Search for"
+    ap a
+  end 
+
+  def process({[:drop], a}) do
+    puts "Drop"
+    ap a
+  end 
+  
+  def process({[:list], a}) do
+    puts "List"
+    ap a
+  end 
+  
   defp parse_args(args) do
     Optimus.new!(
       name: "mediax",
@@ -30,13 +46,13 @@ defmodule MediaIndexer do
       subcommands: [
         scan: [
           name: "scan",
-          about: "scan the given directories for content and metadata",
+          about: "Scan the given directories for content and metadata",
           allow_unknown_args: true,
           parse_double_dash: false,
           args: [
             cache: [
               value_name: "CACHE_NAME",
-              help: "name of cache create",
+              help: "name of cache to create",
               required: true,
               parser: :string,
             ],            
