@@ -10,13 +10,9 @@ defmodule MediaIndexer do
     args |> parse_args |> process
   end
 
-  def process([]) do
-    puts "No arguments given"
-  end
-
   def process({[:scan], a}) do
     puts "Superb matching of scan"
-    ap a
+    ap a.args
   end 
 
   def process({[:search], a}) do
@@ -33,6 +29,10 @@ defmodule MediaIndexer do
     puts "List"
     ap a
   end 
+
+  def process([]) do
+    puts "No arguments given"
+  end
   
   defp parse_args(args) do
     Optimus.new!(
