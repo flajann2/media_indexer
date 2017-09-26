@@ -25,3 +25,8 @@ at [[https://hexdocs.pm/media_indexer]].
     #+begin_src bash
     mix escript.build
     #+end_src
+
+    Emacs development string
+    #+begin_src bash
+    cd /development/elixir_proj/media_indexer ; LC_ALL=de_DE.UTF-8 mix escript.build
+    #+end_src

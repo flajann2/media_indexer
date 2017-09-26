@@ -3,16 +3,21 @@ defmodule MediaIndexer do
   Documentation for MediaIndexer.
   """
 
+  @name __MODULE__
+  
   import Apex
   import IO
+
+  import MediaIndexer.Actions
   
   def main(args) do
     args |> parse_args |> process
   end
 
   def process({[:scan], a}) do
-    puts "Superb matching of scan"
-    ap a.args
+    cache_name = a.args.cache
+    scan_dirs = a.unknown
+    [cache_name, scan_dirs] |> Actions.scan
   end 
 
   def process({[:search], a}) do

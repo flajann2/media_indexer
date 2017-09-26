@@ -24,6 +24,7 @@ defmodule MediaIndexer.Mixfile do
     [
       {:apex, "~> 1.0"},
       {:optimus, "~> 0.1"}
+      {:mox, "~> 0.1", only: :test}
     ]
   end
 end
