@@ -8,7 +8,7 @@ defmodule MediaIndexer do
   import Apex
   import IO
 
-  import MediaIndexer.Actions
+  import Media.Actions
   
   def main(args) do
     args |> parse_args |> process
