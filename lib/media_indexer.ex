@@ -3,12 +3,10 @@ defmodule MediaIndexer do
   Documentation for MediaIndexer.
   """
 
-  @name __MODULE__
-  
   import Apex
   import IO
 
-  import Media.Actions
+  alias Media.Actions
   
   def main(args) do
     args |> parse_args |> process

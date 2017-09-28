@@ -5,7 +5,6 @@ defmodule Media.Actions do
   """
 
   import Apex
-  import IO
 
   def scan([cache_name, scan_dirs]) do
     ap cache_name
