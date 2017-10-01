@@ -1,5 +1,8 @@
 defmodule Media.Server do
   use GenServer
+
+  import Apex
+  import IO
   
   def start_link(state) do
     GenServer.start_link(__MODULE__, state, name: __MODULE__)
@@ -9,11 +12,13 @@ defmodule Media.Server do
     {:ok, server}
   end
 
-  def handle_call(:pop, _from, [h | t]) do
+  def handle_call({:scan_file, file}, _from, [h | t]) do
+    puts "calling #{file}"
     {:reply, h, t}
   end
 
-  def handle_cast({:push, h}, t) do
-    {:noreply, [h | t]}
+  def handle_cast({:scan_file, file}, t) do
+    puts "casting #{file}"
+    {:noreply, [t]}
   end  
 end

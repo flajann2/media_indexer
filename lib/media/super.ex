@@ -1,8 +1,11 @@
 defmodule Media.Super do
-  use GenServer
+  use Supervisor
+
+  import Apex
+  import IO
 
   def start_link(child_spec_list) do
-    GenServer.start_link(__MODULE__, [child_spec_list])
+    Supervisor.start_link(__MODULE__, [child_spec_list])
   end
   
   def init([child_spec_list]) do
@@ -12,6 +15,7 @@ defmodule Media.Super do
   end
 
   def start_children([child_spec | rest]) do
+    puts "start_children called"
     case start_child(child_spec) do
       {:ok, pid} -> [{pid, child_spec} | start_children(rest)]
       :error     -> :error

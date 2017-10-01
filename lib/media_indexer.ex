@@ -34,7 +34,8 @@ defmodule MediaIndexer do
     ap a
   end 
 
-  def process([]) do
+  def process(%Optimus.ParseResult{}) do
     puts "No arguments given"
+    :error
   end  
 end

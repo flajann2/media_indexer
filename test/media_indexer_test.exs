@@ -2,7 +2,7 @@ defmodule MediaIndexerTest do
   use ExUnit.Case
   doctest MediaIndexer
 
-  test "greets the world" do
-    assert MediaIndexer.hello() == :world
+  test "main with no parameters" do
+    assert MediaIndexer.main([]) == :error
   end
 end
