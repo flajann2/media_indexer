@@ -4,24 +4,25 @@
 
 ** Installation
 
-If [[https://hex.pm/docs/publish][available in Hex]], the package can be
-installed by adding =media_indexer= to your list of dependencies in
-=mix.exs=:
+   If [[https://hex.pm/docs/publish][available in Hex]], the package can be
+   installed by adding =media_indexer= to your list of dependencies in
+   =mix.exs=:
 
-#+BEGIN_EXAMPLE elixir
+   #+BEGIN_EXAMPLE elixir
     def deps do
       [
         {:media_indexer, "~> 0.1.0"}
       ]
     end
-#+END_EXAMPLE
+   #+END_EXAMPLE
 
-Documentation can be generated with
-[[https://github.com/elixir-lang/ex_doc][ExDoc]] and published on
-[[https://hexdocs.pm][HexDocs]]. Once published, the docs can be found
-at [[https://hexdocs.pm/media_indexer]].
+   Documentation can be generated with
+   [[https://github.com/elixir-lang/ex_doc][ExDoc]] and published on
+   [[https://hexdocs.pm][HexDocs]]. Once published, the docs can be found
+   at [[https://hexdocs.pm/media_indexer]].
+
 ** Notes
-*** Building the project
+*** Building and interacting with the project
     #+begin_src bash
     mix escript.build
     #+end_src

@@ -15,6 +15,5 @@ defmodule Media.Server do
 
   def handle_cast({:push, h}, t) do
     {:noreply, [h | t]}
-  end
-  
+  end  
 end
