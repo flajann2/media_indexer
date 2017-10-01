@@ -48,6 +48,5 @@ defmodule Media.Actions do
   """
   def process_trees({path, list}) do
     ap path
-  end
-  
+  end  
 end

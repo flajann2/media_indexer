@@ -1,6 +1,5 @@
 defmodule Media.CliTest do
   use ExUnit.Case
- 
   doctest Media.Cli
 
   test "parse_args with :scan" do
