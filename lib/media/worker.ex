@@ -1,4 +1,4 @@
-defmodule Media.Server do
+defmodule Media.Worker do
   use GenServer
 
   import Apex
