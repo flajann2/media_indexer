@@ -4,6 +4,8 @@ defmodule Media.Super do
   import Apex
   import IO
 
+  alias Media.Worker
+  
   def start_link(child_spec_list) do
     Supervisor.start_link(__MODULE__, [child_spec_list], name: __MODULE__)
   end
