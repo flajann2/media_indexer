@@ -5,9 +5,18 @@ defmodule Media.Super do
   import IO
 
   alias Media.Worker
-  
+
   def start_link(child_spec_list) do
     Supervisor.start_link(__MODULE__, [child_spec_list], name: __MODULE__)
+  end
+
+  def start_link do
+    Supervisor.start_link(__MODULE__, [])
+  end
+
+  def init([]) do
+    children = [supervisor(Worker, [])]
+    supervise(children, strategy: :one_for_one)
   end
   
   def init([child_spec_list]) do
@@ -26,7 +35,8 @@ defmodule Media.Super do
 
   def start_children([]), do: []
 
-  def start_child(_) do
+  def start_child({child, state}) do
+    ch = [supervisor(child, state)]
+    supervise(ch, strategy: :one_for_one)
   end
 end
-

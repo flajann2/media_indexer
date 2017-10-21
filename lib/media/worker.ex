@@ -4,9 +4,8 @@ defmodule Media.Worker do
   import Apex
   import IO
   
-  def start_link(state) do
-    GenServer.start_link(__MODULE__, state,
-      name: __MODULE__)
+  def start_link(state \\ []) do
+    GenServer.start_link(__MODULE__, state, name: __MODULE__)
   end
 
   def init(server) do
@@ -21,5 +20,5 @@ defmodule Media.Worker do
   def handle_cast({:scan_file, file}, t) do
     puts "casting #{file}"
     {:noreply, [t]}
-  end  
+  end
 end
