@@ -15,7 +15,7 @@ use Mix.Config
 # and access this configuration in your application as:
 #
 #     Application.get_env(:media_indexer, :key)
-#
+#}
 # You can also configure a 3rd-party app:
 #
 #     config :logger, level: :info

@@ -7,4 +7,5 @@
   "optimus": {:hex, :optimus, "0.1.5", "4628a09956ad0357d39112d8eb82a170fec06138a3a04aa159df24eb7de7f174", [:mix], [{:yamerl, "~> 0.4.0", [hex: :yamerl, repo: "hexpm", optional: false]}], "hexpm"},
   "poolboy": {:hex, :poolboy, "1.5.1", "6b46163901cfd0a1b43d692657ed9d7e599853b3b21b95ae5ae0a777cf9b6ca8", [:rebar], [], "hexpm"},
   "postgrex": {:hex, :postgrex, "0.13.3", "c277cfb2a9c5034d445a722494c13359e361d344ef6f25d604c2353185682bfc", [:mix], [{:connection, "~> 1.0", [hex: :connection, repo: "hexpm", optional: false]}, {:db_connection, "~> 1.1", [hex: :db_connection, repo: "hexpm", optional: false]}, {:decimal, "~> 1.0", [hex: :decimal, repo: "hexpm", optional: false]}], "hexpm"},
+  "sh": {:hex, :sh, "1.1.2", "9a6a01a502080b0787c7661687a74225f951c3932aca08d8d11066ca124ba584", [], [], "hexpm"},
   "yamerl": {:hex, :yamerl, "0.4.0", "ae215b1242810a9bc07716b88062f1bfe06f6bc7cf68372091f630baa536df79", [:rebar3], [], "hexpm"}}

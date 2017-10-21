@@ -2,7 +2,6 @@ defmodule MediaIndexer do
   @moduledoc """
   Documentation for MediaIndexer.
   """
-
   import Apex
   import IO
 
@@ -11,6 +10,16 @@ defmodule MediaIndexer do
   
   def main(args) do
     args |> Cli.parse_args |> process
+    loop
+  end
+
+  defp loop do
+    receive do
+      {:done, _code} ->
+        exit(:shutdown)
+      {:mess, message} ->
+        puts "Message received: #{message}"        
+    end
   end
 
   def process({[:scan], a}) do
