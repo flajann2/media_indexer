@@ -7,7 +7,8 @@ defmodule Media.Super do
   alias Media.Worker
 
   def start_link(child_spec_list) do
-    Supervisor.start_link(__MODULE__, [child_spec_list], name: __MODULE__)
+    Supervisor.start_link(__MODULE__,
+      [child_spec_list], name: __MODULE__)
   end
 
   def start_link do
@@ -19,16 +20,16 @@ defmodule Media.Super do
     supervise(children, strategy: :one_for_one)
   end
   
-  def init([child_spec_list]) do
+  def init(child_spec_list) do
     Process.flag(:trap_exit, true)
-    state = child_spec_list |> start_children |> Enum.into(HashDict.new)
-    {:ok, state}
+    children = child_spec_list |> start_children
+    supervise(children, strategy: :one_for_one)
   end
 
   def start_children([child_spec | rest]) do
-    puts "start_children called"
+    puts "*** start_children called ***"
     case start_child(child_spec) do
-      {:ok, pid} -> [{pid, child_spec} | start_children(rest)]
+      {:ok, sup} -> [sup | start_children(rest)]
       :error     -> :error
     end
   end
@@ -36,7 +37,6 @@ defmodule Media.Super do
   def start_children([]), do: []
 
   def start_child({child, state}) do
-    ch = [supervisor(child, state)]
-    supervise(ch, strategy: :one_for_one)
+    {:ok, supervisor(child, state)}
   end
 end
