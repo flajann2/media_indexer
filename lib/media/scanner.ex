@@ -3,8 +3,9 @@ defmodule Media.Scanner do
   import IO
 
   def scan_and_catalog_file(file) do
-    r = Sh.file(file, b: true) |> String.trim
-    puts "#{r} -> #{file}"
+    mimetype = Sh.file(file, b: true, i: true) |> String.trim
+    fulldesc = Sh.file(file, b: true) |> String.trim
+    puts "#{mimetype} <<#{fulldesc}>> -> #{file}"
     :ok
   end
 

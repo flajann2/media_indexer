@@ -33,4 +33,9 @@ defmodule Media.Worker do
   def scan_file(file) do
     GenServer.cast(__MODULE__, {:scan_file, file})
   end
+
+  # to capture and quell spurious messages
+  def handle_info(_, state) do
+    {:noreply, state}
+  end  
 end
