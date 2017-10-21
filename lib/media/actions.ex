@@ -5,9 +5,11 @@ defmodule Media.Actions do
   """
 
   import Apex
+  import IO
+  alias Media.Worker
 
   def scan([cache_name, scan_dirs]) do
-    for dir <- scan_dirs, do: dir_tree(dir) |> process_trees
+    for dir <- scan_dirs, do: dir_tree(dir) |> scan_trees
   end
 
   @doc """
@@ -46,7 +48,13 @@ defmodule Media.Actions do
   spawn a new supervisior to process the list of files there,
   in recursive fashion.
   """
-  def process_trees({path, list}) do
-    ap path
+  def scan_trees({path, list}) do
+    puts "processing path #{path}"
+    Enum.each(list, fn(ele) ->
+      case ele do
+        {npath, nlist} -> scan_trees({npath, nlist})
+        file -> Worker.scan_file(file)      
+      end
+    end)  
   end  
 end
