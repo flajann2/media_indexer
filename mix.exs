@@ -25,11 +25,10 @@ defmodule MediaIndexer.Mixfile do
   defp deps do
     [
       {:apex, "~> 1.0"},
+      {:amnesia, "~> 0.2"},
       {:optimus, "~> 0.1"},
       {:mox, "~> 0.1", only: :test},
       {:postgrex, ">= 0.0.0"},
-      {:ecto, "~> 2.2"},
-      {:ecto_mnesia, "~> 0.9.0"},
       {:sh, "~> 1.1"},
     ]
   end

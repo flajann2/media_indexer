@@ -7,9 +7,10 @@ defmodule MediaApp.Supervisor do
   end
 
   def init(_) do
-    children = [
-      supervisor(Super, [{Worker, []}])
-    ]
+    children =
+      [
+        supervisor(Super, [{Worker, []}])
+      ]
     supervise(children, strategy: :one_for_one)
   end
 end
