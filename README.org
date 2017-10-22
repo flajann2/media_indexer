@@ -1,7 +1,6 @@
 * MediaIndexer
 
 ** Synopsis
-
 ** Installation
 
    If [[https://hex.pm/docs/publish][available in Hex]], the package can be
@@ -36,3 +35,38 @@
     #+begin_src elixir
     :observer.start
     #+end_src
+*** Configuration
+**** Copied from the config file template
+     This configuration is loaded before any dependency and is restricted
+     to this project. If another project depends on this project, this
+     file won't be loaded nor affect the parent project. For this reason,
+     if you want to provide default values for your application for
+     3rd-party users, it should be done in your "mix.exs" file.
+
+     You can configure your application as:
+    
+     #+begin_src elixir
+     config :media_indexer, key: :value
+     #+end_src
+
+     and access this configuration in your application as:
+
+     #+begin_src elixir
+     Application.get_env(:media_indexer, :key)
+     #+end_src
+     
+     You can also configure a 3rd-party app:
+
+     #+begin_src elixir
+     config :logger, level: :info
+     #+end_src
+
+     It is also possible to import configuration files, relative to this
+     directory. For example, you can emulate configuration per environment
+     by uncommenting the line below and defining dev.exs, test.exs and such.
+     Configuration from the imported file will override the ones defined
+     here (which is why it is important to import them last).
+
+     #+begin_src elixir
+     import_config "#{Mix.env}.exs"
+     #+end_src
