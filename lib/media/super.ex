@@ -8,7 +8,7 @@ defmodule Media.Super do
 
   def start_link(child_spec_list) do
     Supervisor.start_link(__MODULE__,
-      [child_spec_list], name: __MODULE__)
+      child_spec_list, name: __MODULE__)
   end
 
   def start_link do
