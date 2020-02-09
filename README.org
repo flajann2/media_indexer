@@ -1,4 +1,10 @@
-* MediaIndexer
+* MediaIndexer                                                     :TOC_5_gh:
+  - [[#synopsis][Synopsis]]
+  - [[#installation][Installation]]
+  - [[#notes][Notes]]
+    - [[#building-and-interacting-with-the-project][Building and interacting with the project]]
+    - [[#configuration][Configuration]]
+      - [[#copied-from-the-config-file-template][Copied from the config file template]]
 
 ** Synopsis
 ** Installation
